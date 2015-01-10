@@ -1,0 +1,24 @@
+{
+  "name": "Password Manager",
+  "version": "1.0",
+  "description": "New and more secure PM",
+  "permissions": ["webRequest", "webRequestBlocking", "tabs", "notifications", "browsingData",
+                  "<all_urls>"],
+  "background": {
+	"scripts": ["background.js", "changePage.js"]
+  }, 
+  "content_scripts": [
+	  {
+		"matches": ["<all_urls>"], 
+		"js": ["jquery-1.11.0-rc1.js", "modifyForm.js"]
+	  }
+	],
+  
+  "icons": { "default_icon": "icon3.png" },
+  
+    "browser_action": {
+      "name": "Click to start scan"
+  },
+
+  "manifest_version": 2
+}
